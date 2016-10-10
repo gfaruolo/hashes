@@ -1,0 +1,41 @@
+ 
+ N = tamanhotabela;
+ i = 0;
+ while não eot{
+   ler endereço e;
+   p = h(e.cep)
+   seek no arquivo do hash em p*tamanho hash
+   ler elemento hash em x
+   se x.cep == -1
+      x.cep = e.cep
+      x.endereço = i;
+      x.prox = -1;
+      escreve x;
+   senão
+      colisão
+   i++;
+ 
+-------------------------------------------------------------------------------------------------------
+colisão:
+ prox = x.prox;
+ x.prox = tamanho do arquivo;
+ seek pra voltar;
+ escreve x;
+ seek tamanho do arquivo(fim);
+ x.cep = e.cep;
+ x.endereço = i;
+ x.prox = pox;
+ escreve x;
+
+-------------------------------------------------------------------------------------------------------
+
+p = h(cep);
+seek p*tam;
+ler em x
+while(x.cep!=cep && x.prox!=-1){
+	seek x.prox;
+	ler em x;
+}
+if(x.cep == cep){
+	ler endereço x.end;
+}
